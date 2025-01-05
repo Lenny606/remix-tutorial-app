@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
     return (
-        <main id={'content-container'}>
+        <main id={'content-container'} className={'container'}>
             <h1>Notebook</h1>
             <p>For taking notes</p>
             <p id={'cta'}>
