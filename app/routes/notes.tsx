@@ -1,13 +1,16 @@
 import styles from "../styles/styles.css";
 import NewNote from "~/components/NewNote";
 import {redirect} from "@remix-run/node";
+import NoteList from "~/components/NoteList";
 
+const dummyNotes = []
 //compoent triggered by get request
 export default function NotesPage() {
     return (
         <main className="max-w-2xl mx-auto mt-10 p-6 border border-gray-300 rounded-lg shadow-md bg-white">
             <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">NotesPage</h1>
             <NewNote/>
+            <NoteList notes={dummyNotes}/>
         </main>
     );
 }
