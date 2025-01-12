@@ -45,7 +45,7 @@ export async function loader({params}) {
 
     const selectedNote: Note | undefined = data.find(note => note.id == nodeId)
     if (!selectedNote) {
-        throw new Response("Note not found");  
+        throw new Response("Note not found");
     }
     return selectedNote;
 }

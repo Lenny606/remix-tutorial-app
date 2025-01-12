@@ -48,7 +48,7 @@ export async function loader() {
     const data: Note[] = dummyNotes;
 
     if (data.length === 0) {
-        throw new Response( "empty data", {
+        throw new Response("empty data", {
                 status: 404
             }  //uses Catch Boundary COmpoentn
         )
@@ -57,8 +57,16 @@ export async function loader() {
 // to get data useLoader hook
     return data;
 }
-export function CatchBoundary(){
-        // const response = useCatch() //DEPRECATED>>
+
+export function CatchBoundary() {
+    // const response = useCatch() //DEPRECATED>>
+}
+
+export function meta() {
+    return [
+        {title: "Notes Page"},
+        {name: "description", content: "Take notes!"},
+    ];
 }
 
 //function to handle ssr request in routes -waits for POST request
