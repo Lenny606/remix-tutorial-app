@@ -19,8 +19,8 @@ export default function NewNote() {
                     name={'content'}
                 ></textarea>
                 {
-                    actionData.message && (
-                        <div className="text-green-800 text-center font-bold">{actionData.message}</div>
+                    actionData?.message && (
+                        <div className="text-green-800 text-center font-bold">{actionData?.message}</div>
                     )
                 }
                 <button

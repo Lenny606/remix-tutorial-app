@@ -6,6 +6,7 @@ import {dummyNotes} from "../../data/data";
 import {useLoaderData, useActionData} from "@remix-run/react";
 
 type Note = {
+    id: number
     title: string
     content: string
 }
@@ -23,8 +24,8 @@ export default function NotesPage() {
             <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">NotesPage</h1>
             <NewNote/>
             {
-                actionData.message && (
-                    <div className="text-green-800 text-center font-bold">{actionData.message}</div>
+                actionData?.message && (
+                    <div className="text-green-800 text-center font-bold">{actionData?.message}</div>
                 )
             }
 
@@ -47,7 +48,7 @@ export async function loader() {
     const data: Note[] = dummyNotes;
 
     if (data.length === 0) {
-        throw new Response({message: "empty data"}, {
+        throw new Response( "empty data", {
                 status: 404
             }  //uses Catch Boundary COmpoentn
         )
